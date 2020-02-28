@@ -1,0 +1,14 @@
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\bin\Debug\Main.exe.config
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\bin\Debug\Main.exe
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\bin\Debug\Main.pdb
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.csprojAssemblyReference.cache
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\MainWindow.g.cs
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\App.g.cs
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main_MarkupCompile.cache
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main_MarkupCompile.lref
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\MainWindow.baml
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.g.resources
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.Properties.Resources.resources
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.csproj.GenerateResource.cache
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.exe
+D:\Stuff\ITB\IF4-TUBES\Tubes2Stima-PlagueInc\Main\Main\obj\Debug\Main.pdb
