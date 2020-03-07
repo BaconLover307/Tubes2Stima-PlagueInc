@@ -18,21 +18,34 @@ namespace PlagueInc
         }
         private static void mapSetup(ref Graph g, string filePath1)
         {
-            string[] lines = System.IO.File.ReadAllLines(filePath1);
-            for (int i = 1; i <= Convert.ToInt32(lines[0]); i++)
+            try
             {
-                string[] line = lines[i].Split(' ');
-                g.addEdge(line[0], line[1], Convert.ToDouble(line[2].Replace('.', ',')));
+                string[] lines = System.IO.File.ReadAllLines(filePath1);
+                for (int i = 1; i <= Convert.ToInt32(lines[0]); i++)
+                {
+                    string[] line = lines[i].Split(' ');
+                    g.addEdge(line[0], line[1], Convert.ToDouble(line[2].Replace('.', ',')));
+                }
+            } catch (System.IO.FileNotFoundException)
+            {
+                System.Console.WriteLine("{0} not found\n", filePath1);
             }
         }
         private static void populationSetup(ref Graph g, string filePath2)
         {
-            string[] lines = System.IO.File.ReadAllLines(filePath2);
-            g.setViralSource(lines[0].Split(' ')[1]);
-            for (int i = 1; i <= Convert.ToInt32(lines[0].Split(' ')[0]); i++)
+            try
             {
-                string[] line = lines[i].Split(' ');
-                g.setPopulation(line[0], Convert.ToInt32(line[1]));
+                string[] lines = System.IO.File.ReadAllLines(filePath2);
+                g.setViralSource(lines[0].Split(' ')[1]);
+                for (int i = 1; i <= Convert.ToInt32(lines[0].Split(' ')[0]); i++)
+                {
+                    string[] line = lines[i].Split(' ');
+                    g.setPopulation(line[0], Convert.ToInt32(line[1]));
+                }
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                System.Console.WriteLine("{0} not found\n", filePath2);
             }
         }
     }
