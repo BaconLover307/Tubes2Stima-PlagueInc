@@ -25,13 +25,13 @@ namespace PlagueInc
             g.addEdge("3", "4", 2);
             g.addEdge("3", "5", 6);
             g.addEdge("4", "5", 3);
-            System.Console.WriteLine(g.ToString());
+            System.Console.WriteLine(g);
             */
 
             string fp1 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test1.txt";
             string fp2 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
             Graph g = FileReader.readGraphFromFile(fp1, fp2);
-            System.Console.WriteLine(g.ToString());
+            System.Console.WriteLine(g);
         }
     }
 }
