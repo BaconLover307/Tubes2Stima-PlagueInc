@@ -25,9 +25,6 @@ namespace PlagueInc
             g.addEdge("3", "5", 6);
             g.addEdge("4", "5", 3);
             System.Console.WriteLine(g.ToString());
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
         }
     }
 }
