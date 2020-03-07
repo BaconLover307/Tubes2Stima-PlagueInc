@@ -9,11 +9,12 @@ namespace PlagueInc
     class Graph
     // Directed graph implementation
     {
-        // Graph representation using adjacency list of <dest node, weight>
+        // Graph representation using adjacency list of <dest node, tr>
         private Dictionary<string, List<Tuple<string, double>>> graph;
         private Dictionary<string, int> population;
         private Dictionary<string, int> time; // time first affected
         private int timeNow;
+        private string viralSource; // first affected city
 
         // Constructor
         public Graph()
@@ -22,6 +23,7 @@ namespace PlagueInc
             population = new Dictionary<string, int>();
             time = new Dictionary<string, int>();
             timeNow = 0;
+            viralSource = "#";
         }
   
         // Graph method
@@ -35,7 +37,11 @@ namespace PlagueInc
         {
             population[node] = num;
         }
-        public void addEdge(string src, string dst, double weight)
+        public void setViralSource(string src)
+        {
+            viralSource = src;
+        }
+        public void addEdge(string src, string dst, double tr)
         {
             // Check if node not exist
             if (!graph.ContainsKey(src))
@@ -43,7 +49,7 @@ namespace PlagueInc
             if (!graph.ContainsKey(dst))
                 addNode(dst);
             // Add directed edge
-            graph[src].Add(new Tuple<string, double>(dst, weight));
+            graph[src].Add(new Tuple<string, double>(dst, tr));
         }
         public void BFS(string src)
         {
@@ -123,6 +129,8 @@ namespace PlagueInc
             {
                 result += String.Format("{0} : {1}\n", src.Key, src.Value);
             }
+            // Viral source
+            result += String.Format("Viral source : {0}\n", viralSource);
             // Time since affected
             result += "Time since affected:\n";
             foreach (var src in time)
