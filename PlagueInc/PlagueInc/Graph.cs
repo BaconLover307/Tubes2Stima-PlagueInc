@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlagueInc
 {
-    class Graph : Microsoft.Msagl.Drawing.Graph
+    class Graph
     // Directed graph implementation
     {
         // Graph representation using adjacency list of <dest node, weight>
