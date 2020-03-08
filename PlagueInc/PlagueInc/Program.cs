@@ -28,10 +28,46 @@ namespace PlagueInc
             System.Console.WriteLine(g);
             */
 
+            /* 
+            //create a form 
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            //create a viewer object 
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+
+            //bind the graph to the viewer 
+            viewer.Graph = graphOut;
+            associate the viewer with the form 
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            show the form 
+            form.ShowDialog();
+             */
+
+            // Generate graph
             string fp1 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test1.txt";
             string fp2 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
             Graph g = FileReader.readGraphFromFile(fp1, fp2);
-            System.Console.WriteLine(g);
+            System.Console.WriteLine(g); // console out
+
+            // Convert graph
+            Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
+
+            // Draw graph
+            //create a form 
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            //create a viewer object 
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            //bind the graph to the viewer 
+            viewer.Graph = gDraw;
+            //associate the viewer with the form
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            //show the form
+            form.ShowDialog();
         }
     }
 }

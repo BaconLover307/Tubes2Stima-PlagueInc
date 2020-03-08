@@ -12,8 +12,8 @@ namespace PlagueInc
         // Graph representation using adjacency list of <dest node, tr>
         private Dictionary<string, List<Tuple<string, double>>> graph;
         private Dictionary<string, int> population;
-        private Dictionary<string, int> time; // time first affected
-        private int timeNow;
+        private Dictionary<string, int> timeInfected; // time first affected
+        private int inputTime;
         private string viralSource; // first affected city
 
         // Constructor
@@ -21,8 +21,8 @@ namespace PlagueInc
         {
             graph = new Dictionary<string, List<Tuple<string, double>>>();
             population = new Dictionary<string, int>();
-            time = new Dictionary<string, int>();
-            timeNow = 0;
+            timeInfected = new Dictionary<string, int>();
+            inputTime = 0;
             viralSource = "#";
         }
   
@@ -31,15 +31,7 @@ namespace PlagueInc
         {
             graph[node] = new List<Tuple<string, double>>();
             population[node] = 0; // default value
-            time[node] = int.MaxValue; // default value
-        }
-        public void setPopulation(string node, int num)
-        {
-            population[node] = num;
-        }
-        public void setViralSource(string src)
-        {
-            viralSource = src;
+            timeInfected[node] = int.MaxValue; // default value
         }
         public void addEdge(string src, string dst, double tr)
         {
@@ -78,15 +70,37 @@ namespace PlagueInc
             }
         }
 
+        // Getter and setter
+        public Dictionary<string, List<Tuple<string, double>>> getGraph()
+        {
+            return graph;
+        }
+        public Dictionary<string, int> getTimeInfected()
+        {
+            return timeInfected;
+        }
+        public void setPopulation(string node, int num)
+        {
+            population[node] = num;
+        }
+        public void setInputTime(int time)
+        {
+            inputTime = time;
+        }
+        public void setViralSource(string src)
+        {
+            viralSource = src;
+        }
+
         // Corona method
         private double P(string A)
         {
             return Convert.ToDouble(population[A]);
         }
         public int t(string A)
-        // Return time since affected
+        // Return max time since affected
         {
-            return Math.Max(0, timeNow - time[A]);
+            return Math.Max(0, inputTime - timeInfected[A]);
         }
         public double I(string A, int t)
         {
@@ -133,7 +147,7 @@ namespace PlagueInc
             result += String.Format("Viral source : {0}\n", viralSource);
             // Time since affected
             result += "Time since affected:\n";
-            foreach (var src in time)
+            foreach (var src in timeInfected)
             {
                 result += String.Format("{0} : {1}\n", src.Key, t(src.Key));
             }
