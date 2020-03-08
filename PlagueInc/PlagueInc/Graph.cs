@@ -145,8 +145,8 @@ namespace PlagueInc
             }
             // Viral source
             result += String.Format("Viral source : {0}\n", viralSource);
-            // Time since affected
-            result += "Time since affected:\n";
+            // Max time since affected
+            result += "Max time since affected:\n";
             foreach (var src in timeInfected)
             {
                 result += String.Format("{0} : {1}\n", src.Key, t(src.Key));
