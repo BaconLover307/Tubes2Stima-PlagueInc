@@ -14,7 +14,7 @@ namespace PlagueInc
         [STAThread]
         static void Main()
         {
-            /*
+            /* TEST 1
             Graph g = new Graph();
             g.addEdge("0", "1", 4);
             g.addEdge("0", "2", 2);
@@ -28,7 +28,7 @@ namespace PlagueInc
             System.Console.WriteLine(g);
             */
 
-            /* 
+            /* TEST 2
             //create a form 
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
             //create a viewer object 
@@ -45,6 +45,10 @@ namespace PlagueInc
             form.ShowDialog();
              */
 
+            // Initial setup
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             // Generate graph
             string fp1 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test1.txt";
             string fp2 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
@@ -55,19 +59,19 @@ namespace PlagueInc
             Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
 
             // Draw graph
-            //create a form 
-            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
-            //create a viewer object 
+            // Create viewer object 
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            //bind the graph to the viewer 
+            // Bind graph and viewer
             viewer.Graph = gDraw;
-            //associate the viewer with the form
-            form.SuspendLayout();
+            // Add dockstyle
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            form.Controls.Add(viewer);
-            form.ResumeLayout();
-            //show the form
-            form.ShowDialog();
+
+            // Add viewer to Form
+            System.Windows.Forms.Form app = new Frontend();
+            app.Controls.Add(viewer);
+
+            // Run
+            Application.Run(app);
         }
     }
 }

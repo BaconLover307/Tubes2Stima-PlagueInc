@@ -1,6 +1,6 @@
 ﻿namespace PlagueInc
 {
-    partial class Form1
+    partial class Frontend
     {
         /// <summary>
         /// Required designer variable.
