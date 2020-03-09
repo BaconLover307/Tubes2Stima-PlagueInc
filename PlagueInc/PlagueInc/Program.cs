@@ -44,33 +44,36 @@ namespace PlagueInc
             show the form 
             form.ShowDialog();
              */
-             /*
+            /*
+           // Initial setup
+           Application.EnableVisualStyles();
+           Application.SetCompatibleTextRenderingDefault(false);
+
+           // Generate graph
+           string fp1 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test1.txt";
+           string fp2 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test2.txt";
+           //string fp2 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
+           Graph g = FileReader.readGraphFromFile(fp1, fp2);
+           System.Console.WriteLine(g); // console out
+
+           // Convert graph
+           Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
+
+           // Draw graph
+           // Create viewer object 
+           Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+           // Bind graph and viewer
+           viewer.Graph = gDraw;
+           // Add dockstyle
+           viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+           */
+
             // Initial setup
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Generate graph
-            string fp1 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test1.txt";
-            string fp2 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test2.txt";
-            //string fp2 = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
-            Graph g = FileReader.readGraphFromFile(fp1, fp2);
-            System.Console.WriteLine(g); // console out
-
-            // Convert graph
-            Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
-
-            // Draw graph
-            // Create viewer object 
-            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            // Bind graph and viewer
-            viewer.Graph = gDraw;
-            // Add dockstyle
-            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            */
             // Add viewer to Form
             System.Windows.Forms.Form app = new Frontend();
-            
-            //app.Controls.Add(viewer);
             
             // Run
             Application.Run(app);

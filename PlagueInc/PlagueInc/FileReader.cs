@@ -28,7 +28,7 @@ namespace PlagueInc
                 }
             } catch (System.IO.FileNotFoundException)
             {
-                System.Console.WriteLine("{0} not found\n", filePath1);
+                throw new System.InvalidOperationException("Map file not found.");
             }
         }
         private static void populationSetup(ref Graph g, string filePath2)
@@ -45,7 +45,7 @@ namespace PlagueInc
             }
             catch (System.IO.FileNotFoundException)
             {
-                System.Console.WriteLine("{0} not found\n", filePath2);
+                throw new System.InvalidOperationException("Population file not found.");
             }
         }
     }

@@ -12,10 +12,11 @@ namespace PlagueInc
 {
     public partial class Frontend : Form
     {
-        string mapFile,populationFile;
+        string mapFilePath, popFilePath;
         public Frontend()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         private void Frontend_Load(object sender, EventArgs e)
@@ -23,15 +24,70 @@ namespace PlagueInc
 
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            string fp1 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test1.txt";
-            string fp2 = @"J:\Jovan's Stuff\ITB\IF04\IF4-Tubes\Tubes2Stima-PlagueInc\test2.txt";
-            Microsoft.Msagl.GraphViewerGdi.GViewer tampil = CalculateGraph.Calculate(fp1, fp2);
-            tampil.Dock = System.Windows.Forms.DockStyle.Fill;
-            picDisplayGraph.Dock = tampil.Dock;      
 
         }
 
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void mapFileBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = @"C:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    mapFilePath = mapFilePathInp.Text = openFileDialog.FileName;
+                }
+            }
+        }
+
+        private void popFileBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = @"C:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    popFilePath = popFilePathInp.Text = openFileDialog.FileName;
+                }
+            }
+        }
+
+        private void mapFilePathInp_TextChanged(object sender, EventArgs e)
+        {
+            mapFilePath = mapFilePathInp.Text;
+        }
+
+        private void popFilePathInp_TextChanged(object sender, EventArgs e)
+        {
+            popFilePath = popFilePathInp.Text;
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(mapFilePath) || string.IsNullOrEmpty(popFilePath))
+                    throw new System.InvalidOperationException("Map and population path can't be empty.");
+                Graph g = FileReader.readGraphFromFile(mapFilePath, popFilePath);
+                Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
+                gViewer.Graph = gDraw;
+            }
+            catch (System.InvalidOperationException err)
+            {
+                MessageBox.Show(err.Message, "File input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception _)
+            {
+                MessageBox.Show("There is error in graph calculation", "Graph calculation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
