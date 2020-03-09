@@ -13,6 +13,7 @@ namespace PlagueInc
         private Dictionary<string, List<Tuple<string, double>>> graph;
         private Dictionary<string, int> population;
         private Dictionary<string, int> timeInfected; // time first affected
+        private Dictionary<string, string> edgeInfected;
         private int inputTime;
         private string viralSource; // first affected city
 
@@ -22,6 +23,7 @@ namespace PlagueInc
             graph = new Dictionary<string, List<Tuple<string, double>>>();
             population = new Dictionary<string, int>();
             timeInfected = new Dictionary<string, int>();
+            edgeInfected = new Dictionary<string, string>();
             inputTime = 0;
             viralSource = "#";
         }
@@ -46,25 +48,48 @@ namespace PlagueInc
         public void BFS(string src)
         {
             // Init
-            Queue<string> q = new Queue<string>();
-            Dictionary<string, bool> visited = new Dictionary<string, bool>();
-            foreach (var node in graph)
-                visited[node.Key] = false;
-            // Src
-            q.Enqueue(src);
-            visited[src] = true;
+            Queue<Tuple<string,string>> q = new Queue<Tuple<string,string>>();
+
+            // Set timeInfected with src key to 0
+            timeInfected[src] = 0;
+
+            // Add to Q neighbour(s) of src
+            foreach (var adjNode in graph[src])
+            {
+                q.Enqueue(new Tuple<string, string>(src, adjNode.Item1));
+            }
+
             // BFS
             while (q.Count != 0)
             {
-                string actNode = q.Dequeue();
-                System.Console.WriteLine(actNode);
-                // Iterate over neighbour
-                foreach (var adjNode in graph[actNode])
+                string srcN = q.Dequeue().Item1;
+                string dstN = q.Dequeue().Item2;
+
+                if (S(srcN, dstN) > 1.0)
                 {
-                    if (!visited[adjNode.Item1])
+                    // add srcN -> dstN to edgeInfected
+                    edgeInfected[srcN] = dstN;
+
+                    double t = Math.Ceiling(1 / S(srcN, dstN));
+                    int time = (int)t;
+
+                    // reset time if infinity to 0
+                    if (timeInfected[dstN] == int.MaxValue)
                     {
-                        q.Enqueue(adjNode.Item1);
-                        visited[adjNode.Item1] = true;
+                        timeInfected[dstN] = 0;
+                    }
+
+                    if (timeInfected[srcN] + time <= timeInfected[dstN])
+                    {
+                        timeInfected[dstN] += time;
+                        foreach (var adjNode in graph[dstN]) // Add to Q neighbour(s) of dstN
+                        {
+                            q.Enqueue(new Tuple<string, string>(src, adjNode.Item1));
+                        }
+                    }
+                    else
+                    {
+                        timeInfected[dstN] += time;
                     }
                 }
             }
