@@ -73,15 +73,9 @@ namespace PlagueInc
                     double t = Math.Ceiling(1 / S(srcN, dstN));
                     int time = (int)t;
 
-                    // reset time if infinity to 0
-                    if (timeInfected[dstN] == int.MaxValue)
-                    {
-                        timeInfected[dstN] = 0;
-                    }
-
                     if (timeInfected[srcN] + time <= timeInfected[dstN])
                     {
-                        timeInfected[dstN] += time;
+                        timeInfected[dstN] = timeInfected[srcN] + time;
                         foreach (var adjNode in graph[dstN]) // Add to Q neighbour(s) of dstN
                         {
                             q.Enqueue(new Tuple<string, string>(src, adjNode.Item1));
@@ -89,7 +83,7 @@ namespace PlagueInc
                     }
                     else
                     {
-                        timeInfected[dstN] += time;
+                        timeInfected[dstN] = timeInfected[srcN] + time;
                     }
                 }
             }
