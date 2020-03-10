@@ -32,8 +32,6 @@ namespace PlagueInc
                 // Change default shape
                 graphOut.FindNode(src.Key).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
             }
-            // TODO: add color to spread path edge
-            // ex: graphOut.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
 
             // Add color to infected city
             foreach (var node in graph.getTimeInfected())
