@@ -19,6 +19,14 @@ namespace PlagueInc
                 // Add edge
                 foreach (var dst in src.Value)
                 {
+                    if (graph.getEdgeInfected().ContainsKey(src.Key))
+                    {
+                        if (graph.getEdgeInfected()[src.Key].Contains(dst.Item1))
+                        {
+                            graphOut.AddEdge(src.Key, dst.Item1).Attr.Color = Microsoft.Msagl.Drawing.Color.IndianRed;
+                            continue;
+                        }
+                    }
                     graphOut.AddEdge(src.Key, dst.Item1);
                 }
                 // Change default shape

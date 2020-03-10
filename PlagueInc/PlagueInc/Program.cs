@@ -77,6 +77,15 @@ namespace PlagueInc
             
             // Run
             Application.Run(app);
+
+            /*
+            string mapFilePath = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test1.txt";
+            string popFilePath = @"E:\KULIAH\SEMESTER 4\Strategi Algoritma\Tubes 2\Tubes2Stima-PlagueInc\test2.txt";
+            Graph g = FileReader.readGraphFromFile(mapFilePath, popFilePath);
+            g.setInputTime(1);
+            g.BFS(g.getViralSource());
+            GraphConverter.graphConverter(g);
+            */
         }
     }
 }

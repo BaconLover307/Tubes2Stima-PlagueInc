@@ -17,6 +17,7 @@ namespace PlagueInc
         {
             InitializeComponent();
             MaximizeBox = false;
+            numericTimeSet.Maximum = 9999;
         }
 
         private void Frontend_Load(object sender, EventArgs e)
@@ -70,6 +71,12 @@ namespace PlagueInc
             popFilePath = popFilePathInp.Text;
         }
 
+        private void numericTimeSet_ValueChanged(object sender, EventArgs e)
+        {
+            if (autoCalcCheck.Checked)
+                btnCalc_Click(sender, e);
+        }
+
         private void btnCalc_Click(object sender, EventArgs e)
         {
             try
@@ -77,6 +84,8 @@ namespace PlagueInc
                 if (string.IsNullOrEmpty(mapFilePath) || string.IsNullOrEmpty(popFilePath))
                     throw new System.InvalidOperationException("Map and population path can't be empty.");
                 Graph g = FileReader.readGraphFromFile(mapFilePath, popFilePath);
+                g.setInputTime((int) numericTimeSet.Value);
+                g.BFS(g.getViralSource());
                 Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
                 gViewer.Graph = gDraw;
             }
@@ -84,7 +93,7 @@ namespace PlagueInc
             {
                 MessageBox.Show(err.Message, "File input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception _)
+            catch (Exception)
             {
                 MessageBox.Show("There is error in graph calculation", "Graph calculation error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -13,7 +13,7 @@ namespace PlagueInc
         private Dictionary<string, List<Tuple<string, double>>> graph;
         private Dictionary<string, int> population;
         private Dictionary<string, int> timeInfected; // time first affected
-        private Dictionary<string, string> edgeInfected;
+        private Dictionary<string, List<string>> edgeInfected;
         private int inputTime;
         private string viralSource; // first affected city
 
@@ -23,7 +23,7 @@ namespace PlagueInc
             graph = new Dictionary<string, List<Tuple<string, double>>>();
             population = new Dictionary<string, int>();
             timeInfected = new Dictionary<string, int>();
-            edgeInfected = new Dictionary<string, string>();
+            edgeInfected = new Dictionary<string, List<string>>();
             inputTime = 0;
             viralSource = "#";
         }
@@ -34,6 +34,7 @@ namespace PlagueInc
             graph[node] = new List<Tuple<string, double>>();
             population[node] = 0; // default value
             timeInfected[node] = int.MaxValue; // default value
+            edgeInfected[node] = new List<string>();
         }
         public void addEdge(string src, string dst, double tr)
         {
@@ -50,6 +51,11 @@ namespace PlagueInc
             // Init
             Queue<Tuple<string,string>> q = new Queue<Tuple<string,string>>();
 
+            // Set default timeInfected
+            foreach (var node in graph)
+            {
+                timeInfected[node.Key] = int.MaxValue;
+            }
             // Set timeInfected with src key to 0
             timeInfected[src] = 0;
 
@@ -62,28 +68,32 @@ namespace PlagueInc
             // BFS
             while (q.Count != 0)
             {
-                string srcN = q.Dequeue().Item1;
-                string dstN = q.Dequeue().Item2;
+                Tuple<string, string> actNode = q.Dequeue();
+                string srcN = actNode.Item1;
+                string dstN = actNode.Item2;
 
-                if (S(srcN, dstN) > 1.0)
+                if (S(srcN, dstN) > 1.0) // Max S > 1
                 {
-                    // add srcN -> dstN to edgeInfected
-                    edgeInfected[srcN] = dstN;
-
-                    double t = Math.Ceiling(1 / S(srcN, dstN));
-                    int time = (int)t;
+                    // get first time dstN affected
+                    int time = 0;
+                    while (time <= t(srcN))
+                    {
+                        if (S(srcN, dstN, time) > 1.0)
+                            break;
+                        time++;
+                    }
 
                     if (timeInfected[srcN] + time <= timeInfected[dstN])
                     {
+                        // update timeInfected
                         timeInfected[dstN] = timeInfected[srcN] + time;
-                        foreach (var adjNode in graph[dstN]) // Add to Q neighbour(s) of dstN
+                        // update edgeInfected
+                        edgeInfected[srcN].Add(dstN);
+                        // push neighbour
+                        foreach (var adjNode in graph[dstN])
                         {
-                            q.Enqueue(new Tuple<string, string>(src, adjNode.Item1));
+                            q.Enqueue(new Tuple<string, string>(dstN, adjNode.Item1));
                         }
-                    }
-                    else
-                    {
-                        timeInfected[dstN] = timeInfected[srcN] + time;
                     }
                 }
             }
@@ -97,6 +107,14 @@ namespace PlagueInc
         public Dictionary<string, int> getTimeInfected()
         {
             return timeInfected;
+        }
+        public Dictionary<string, List<string>> getEdgeInfected()
+        {
+            return edgeInfected;
+        }
+        public string getViralSource()
+        {
+            return viralSource;
         }
         public void setPopulation(string node, int num)
         {
@@ -138,8 +156,14 @@ namespace PlagueInc
             return 0;
         }
         public double S(string A, string B)
+        // Get max S value, use max t in I
         {
             return (I(A, t(A)) * Tr(A, B));
+        }
+        public double S(string A, string B, int t)
+        // Overload, to calculate first spread t
+        {
+            return (I(A, t) * Tr(A, B));
         }
 
         // Utils
