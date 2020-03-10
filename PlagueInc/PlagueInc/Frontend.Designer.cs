@@ -68,19 +68,20 @@
             // 
             // numericTimeSet
             // 
-            this.numericTimeSet.Location = new System.Drawing.Point(60, 25);
+            this.numericTimeSet.Location = new System.Drawing.Point(80, 31);
+            this.numericTimeSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericTimeSet.Name = "numericTimeSet";
-            this.numericTimeSet.Size = new System.Drawing.Size(90, 20);
+            this.numericTimeSet.Size = new System.Drawing.Size(120, 22);
             this.numericTimeSet.TabIndex = 2;
             this.numericTimeSet.ValueChanged += new System.EventHandler(this.numericTimeSet_ValueChanged);
             // 
             // mapFileBtn
             // 
             this.mapFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapFileBtn.Location = new System.Drawing.Point(518, 24);
-            this.mapFileBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mapFileBtn.Location = new System.Drawing.Point(691, 30);
+            this.mapFileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mapFileBtn.Name = "mapFileBtn";
-            this.mapFileBtn.Size = new System.Drawing.Size(22, 19);
+            this.mapFileBtn.Size = new System.Drawing.Size(29, 23);
             this.mapFileBtn.TabIndex = 4;
             this.mapFileBtn.Text = "...";
             this.mapFileBtn.UseVisualStyleBackColor = true;
@@ -94,40 +95,40 @@
             this.fileInput.Controls.Add(this.popFileLbl);
             this.fileInput.Controls.Add(this.mapFileLbl);
             this.fileInput.Controls.Add(this.mapFileBtn);
-            this.fileInput.Location = new System.Drawing.Point(23, 559);
-            this.fileInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fileInput.Location = new System.Drawing.Point(31, 688);
+            this.fileInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fileInput.Name = "fileInput";
-            this.fileInput.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.fileInput.Size = new System.Drawing.Size(545, 90);
+            this.fileInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fileInput.Size = new System.Drawing.Size(727, 111);
             this.fileInput.TabIndex = 6;
             this.fileInput.TabStop = false;
             this.fileInput.Text = "File Input";
             // 
             // popFilePathInp
             // 
-            this.popFilePathInp.Location = new System.Drawing.Point(96, 58);
-            this.popFilePathInp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.popFilePathInp.Location = new System.Drawing.Point(128, 71);
+            this.popFilePathInp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.popFilePathInp.Name = "popFilePathInp";
-            this.popFilePathInp.Size = new System.Drawing.Size(418, 20);
+            this.popFilePathInp.Size = new System.Drawing.Size(556, 22);
             this.popFilePathInp.TabIndex = 11;
             this.popFilePathInp.TextChanged += new System.EventHandler(this.popFilePathInp_TextChanged);
             // 
             // mapFilePathInp
             // 
-            this.mapFilePathInp.Location = new System.Drawing.Point(96, 24);
-            this.mapFilePathInp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mapFilePathInp.Location = new System.Drawing.Point(128, 30);
+            this.mapFilePathInp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mapFilePathInp.Name = "mapFilePathInp";
-            this.mapFilePathInp.Size = new System.Drawing.Size(418, 20);
+            this.mapFilePathInp.Size = new System.Drawing.Size(556, 22);
             this.mapFilePathInp.TabIndex = 10;
             this.mapFilePathInp.TextChanged += new System.EventHandler(this.mapFilePathInp_TextChanged);
             // 
             // popFileBtn
             // 
             this.popFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.popFileBtn.Location = new System.Drawing.Point(518, 58);
-            this.popFileBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.popFileBtn.Location = new System.Drawing.Point(691, 71);
+            this.popFileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.popFileBtn.Name = "popFileBtn";
-            this.popFileBtn.Size = new System.Drawing.Size(22, 19);
+            this.popFileBtn.Size = new System.Drawing.Size(29, 23);
             this.popFileBtn.TabIndex = 9;
             this.popFileBtn.Text = "...";
             this.popFileBtn.UseVisualStyleBackColor = true;
@@ -136,20 +137,18 @@
             // popFileLbl
             // 
             this.popFileLbl.AutoSize = true;
-            this.popFileLbl.Location = new System.Drawing.Point(14, 61);
-            this.popFileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.popFileLbl.Location = new System.Drawing.Point(19, 75);
             this.popFileLbl.Name = "popFileLbl";
-            this.popFileLbl.Size = new System.Drawing.Size(76, 13);
+            this.popFileLbl.Size = new System.Drawing.Size(101, 17);
             this.popFileLbl.TabIndex = 6;
             this.popFileLbl.Text = "Population File";
             // 
             // mapFileLbl
             // 
             this.mapFileLbl.AutoSize = true;
-            this.mapFileLbl.Location = new System.Drawing.Point(14, 27);
-            this.mapFileLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.mapFileLbl.Location = new System.Drawing.Point(19, 33);
             this.mapFileLbl.Name = "mapFileLbl";
-            this.mapFileLbl.Size = new System.Drawing.Size(47, 13);
+            this.mapFileLbl.Size = new System.Drawing.Size(61, 17);
             this.mapFileLbl.TabIndex = 5;
             this.mapFileLbl.Text = "Map File";
             this.mapFileLbl.Click += new System.EventHandler(this.label1_Click);
@@ -162,15 +161,20 @@
             // graphOutput
             // 
             this.graphOutput.Controls.Add(this.gViewer);
-            this.graphOutput.Location = new System.Drawing.Point(23, 20);
-            this.graphOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.graphOutput.Location = new System.Drawing.Point(31, 25);
+            this.graphOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.graphOutput.Name = "graphOutput";
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.graphOutput.Size = new System.Drawing.Size(874, 644);
 =======
             this.graphOutput.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.graphOutput.Size = new System.Drawing.Size(800, 523);
 >>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+=======
+            this.graphOutput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.graphOutput.Size = new System.Drawing.Size(1067, 644);
+>>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.graphOutput.TabIndex = 7;
             this.graphOutput.TabStop = false;
             this.graphOutput.Text = "Graph Output";
@@ -190,9 +194,9 @@
             this.gViewer.InsertingEdge = false;
             this.gViewer.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewer.LayoutEditingEnabled = true;
-            this.gViewer.Location = new System.Drawing.Point(16, 27);
+            this.gViewer.Location = new System.Drawing.Point(21, 33);
             this.gViewer.LooseOffsetForRouting = 0.25D;
-            this.gViewer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gViewer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gViewer.MouseHitDistance = 0.05D;
             this.gViewer.Name = "gViewer";
             this.gViewer.NavigationVisible = true;
@@ -206,10 +210,14 @@
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.gViewer.Size = new System.Drawing.Size(836, 583);
 =======
             this.gViewer.Size = new System.Drawing.Size(766, 474);
 >>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+=======
+            this.gViewer.Size = new System.Drawing.Size(1021, 583);
+>>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.gViewer.TabIndex = 0;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -225,11 +233,11 @@
             this.inputTime.Controls.Add(this.autoCalcLbl);
             this.inputTime.Controls.Add(this.timeLbl);
             this.inputTime.Controls.Add(this.numericTimeSet);
-            this.inputTime.Location = new System.Drawing.Point(573, 559);
-            this.inputTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.inputTime.Location = new System.Drawing.Point(764, 688);
+            this.inputTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputTime.Name = "inputTime";
-            this.inputTime.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.inputTime.Size = new System.Drawing.Size(155, 90);
+            this.inputTime.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inputTime.Size = new System.Drawing.Size(207, 111);
             this.inputTime.TabIndex = 8;
             this.inputTime.TabStop = false;
             this.inputTime.Text = "Input Time";
@@ -237,6 +245,7 @@
             // autoCalcCheck
             // 
             this.autoCalcCheck.AutoSize = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.autoCalcCheck.Location = new System.Drawing.Point(80, 74);
             this.autoCalcCheck.Name = "autoCalcCheck";
@@ -247,34 +256,39 @@
             this.autoCalcCheck.Name = "autoCalcCheck";
             this.autoCalcCheck.Size = new System.Drawing.Size(15, 14);
 >>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+=======
+            this.autoCalcCheck.Location = new System.Drawing.Point(80, 74);
+            this.autoCalcCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.autoCalcCheck.Name = "autoCalcCheck";
+            this.autoCalcCheck.Size = new System.Drawing.Size(18, 17);
+>>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.autoCalcCheck.TabIndex = 14;
             this.autoCalcCheck.UseVisualStyleBackColor = true;
             // 
             // autoCalcLbl
             // 
             this.autoCalcLbl.AutoSize = true;
-            this.autoCalcLbl.Location = new System.Drawing.Point(4, 61);
-            this.autoCalcLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.autoCalcLbl.Location = new System.Drawing.Point(5, 75);
             this.autoCalcLbl.Name = "autoCalcLbl";
-            this.autoCalcLbl.Size = new System.Drawing.Size(53, 13);
+            this.autoCalcLbl.Size = new System.Drawing.Size(68, 17);
             this.autoCalcLbl.TabIndex = 13;
             this.autoCalcLbl.Text = "Auto Calc";
             // 
             // timeLbl
             // 
             this.timeLbl.AutoSize = true;
-            this.timeLbl.Location = new System.Drawing.Point(4, 27);
-            this.timeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.timeLbl.Location = new System.Drawing.Point(5, 33);
             this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(30, 13);
+            this.timeLbl.Size = new System.Drawing.Size(39, 17);
             this.timeLbl.TabIndex = 12;
             this.timeLbl.Text = "Time";
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(5, 24);
+            this.btnCalc.Location = new System.Drawing.Point(7, 30);
+            this.btnCalc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(80, 52);
+            this.btnCalc.Size = new System.Drawing.Size(107, 64);
             this.btnCalc.TabIndex = 1;
             this.btnCalc.Text = "Kalkulasi";
             this.btnCalc.UseVisualStyleBackColor = true;
@@ -283,11 +297,11 @@
             // calculateBFS
             // 
             this.calculateBFS.Controls.Add(this.btnCalc);
-            this.calculateBFS.Location = new System.Drawing.Point(733, 559);
-            this.calculateBFS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calculateBFS.Location = new System.Drawing.Point(977, 688);
+            this.calculateBFS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.calculateBFS.Name = "calculateBFS";
-            this.calculateBFS.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.calculateBFS.Size = new System.Drawing.Size(91, 90);
+            this.calculateBFS.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.calculateBFS.Size = new System.Drawing.Size(121, 111);
             this.calculateBFS.TabIndex = 13;
             this.calculateBFS.TabStop = false;
             this.calculateBFS.Text = "Calculate BFS";
@@ -383,18 +397,22 @@
 >>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
             // Frontend
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 602);
+            this.ClientSize = new System.Drawing.Size(1129, 819);
             this.Controls.Add(this.calculateBFS);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.inputTime);
             this.Controls.Add(this.graphOutput);
             this.Controls.Add(this.fileInput);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4);
 =======
 >>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+=======
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+>>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.Name = "Frontend";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P.T. Wabah";
