@@ -100,9 +100,18 @@ namespace PlagueInc
                 totalPopulationBox.Text = totalPop.ToString();
                 populationBox.Text = totalInfected.ToString();
 
-                Dictionary<string, List<string>> edgesInfected = g.getEdgeInfected();
-                int totalEdgesInfected = edgesInfected.Count();
-                totalNodeBox.Text = totalEdgesInfected.ToString();
+                int totalNodeInfected = 0;
+                nodeBox.Text = "";
+                foreach (var node in g.getTimeInfected())
+                {
+                    if (node.Value != int.MaxValue)
+                    {
+                        totalNodeInfected++;
+                        int infectedInNode = Convert.ToInt32(Math.Floor(g.I(node.Key, g.t(node.Key))));
+                        nodeBox.Text += String.Format("{0}, t = {1}, n = {2}\r\n", node.Key.PadRight(5), node.Value.ToString().PadRight(5), infectedInNode);
+                    }
+                }
+                totalNodeBox.Text = totalNodeInfected.ToString();
             }
             catch (System.InvalidOperationException err)
             {
@@ -115,4 +124,3 @@ namespace PlagueInc
         }
     }
 }
-`

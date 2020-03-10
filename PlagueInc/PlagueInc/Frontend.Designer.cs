@@ -46,18 +46,15 @@
             this.timeLbl = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
             this.calculateBFS = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.totalPopulationBox = new System.Windows.Forms.TextBox();
-            this.populationBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.totalNodeBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.nodeBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-=======
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+            this.infNodeListLbl = new System.Windows.Forms.Label();
+            this.totalNodeBox = new System.Windows.Forms.TextBox();
+            this.infNodeCountLbl = new System.Windows.Forms.Label();
+            this.populationBox = new System.Windows.Forms.TextBox();
+            this.infPopLbl = new System.Windows.Forms.Label();
+            this.totalPopulationBox = new System.Windows.Forms.TextBox();
+            this.totalPopLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericTimeSet)).BeginInit();
             this.fileInput.SuspendLayout();
             this.graphOutput.SuspendLayout();
@@ -69,7 +66,7 @@
             // numericTimeSet
             // 
             this.numericTimeSet.Location = new System.Drawing.Point(80, 31);
-            this.numericTimeSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericTimeSet.Margin = new System.Windows.Forms.Padding(4);
             this.numericTimeSet.Name = "numericTimeSet";
             this.numericTimeSet.Size = new System.Drawing.Size(120, 22);
             this.numericTimeSet.TabIndex = 2;
@@ -164,17 +161,7 @@
             this.graphOutput.Location = new System.Drawing.Point(31, 25);
             this.graphOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.graphOutput.Name = "graphOutput";
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.graphOutput.Size = new System.Drawing.Size(874, 644);
-=======
-            this.graphOutput.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.graphOutput.Size = new System.Drawing.Size(800, 523);
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
-=======
-            this.graphOutput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.graphOutput.Size = new System.Drawing.Size(1067, 644);
->>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.graphOutput.TabIndex = 7;
             this.graphOutput.TabStop = false;
             this.graphOutput.Text = "Graph Output";
@@ -209,15 +196,7 @@
             this.gViewer.SaveButtonVisible = true;
             this.gViewer.SaveGraphButtonVisible = true;
             this.gViewer.SaveInVectorFormatEnabled = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.gViewer.Size = new System.Drawing.Size(836, 583);
-=======
-            this.gViewer.Size = new System.Drawing.Size(766, 474);
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
-=======
-            this.gViewer.Size = new System.Drawing.Size(1021, 583);
->>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.gViewer.TabIndex = 0;
             this.gViewer.TightOffsetForRouting = 0.125D;
             this.gViewer.ToolBarIsVisible = true;
@@ -245,23 +224,10 @@
             // autoCalcCheck
             // 
             this.autoCalcCheck.AutoSize = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.autoCalcCheck.Location = new System.Drawing.Point(80, 74);
-            this.autoCalcCheck.Name = "autoCalcCheck";
-            this.autoCalcCheck.Size = new System.Drawing.Size(18, 17);
-=======
-            this.autoCalcCheck.Location = new System.Drawing.Point(60, 60);
-            this.autoCalcCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.autoCalcCheck.Name = "autoCalcCheck";
-            this.autoCalcCheck.Size = new System.Drawing.Size(15, 14);
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
-=======
             this.autoCalcCheck.Location = new System.Drawing.Point(80, 74);
             this.autoCalcCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.autoCalcCheck.Name = "autoCalcCheck";
             this.autoCalcCheck.Size = new System.Drawing.Size(18, 17);
->>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.autoCalcCheck.TabIndex = 14;
             this.autoCalcCheck.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +252,7 @@
             // btnCalc
             // 
             this.btnCalc.Location = new System.Drawing.Point(7, 30);
-            this.btnCalc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalc.Margin = new System.Windows.Forms.Padding(4);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(107, 64);
             this.btnCalc.TabIndex = 1;
@@ -306,74 +272,22 @@
             this.calculateBFS.TabStop = false;
             this.calculateBFS.Text = "Calculate BFS";
             // 
-<<<<<<< HEAD
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.nodeBox);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.infNodeListLbl);
             this.groupBox1.Controls.Add(this.totalNodeBox);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.infNodeCountLbl);
             this.groupBox1.Controls.Add(this.populationBox);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.infPopLbl);
             this.groupBox1.Controls.Add(this.totalPopulationBox);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.totalPopLbl);
             this.groupBox1.Location = new System.Drawing.Point(911, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 644);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Casualty Output";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Total Population";
-            // 
-            // totalPopulationBox
-            // 
-            this.totalPopulationBox.Location = new System.Drawing.Point(9, 47);
-            this.totalPopulationBox.Name = "totalPopulationBox";
-            this.totalPopulationBox.ReadOnly = true;
-            this.totalPopulationBox.Size = new System.Drawing.Size(192, 22);
-            this.totalPopulationBox.TabIndex = 14;
-            // 
-            // populationBox
-            // 
-            this.populationBox.Location = new System.Drawing.Point(9, 105);
-            this.populationBox.Name = "populationBox";
-            this.populationBox.ReadOnly = true;
-            this.populationBox.Size = new System.Drawing.Size(192, 22);
-            this.populationBox.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Population Infected";
-            // 
-            // totalNodeBox
-            // 
-            this.totalNodeBox.Location = new System.Drawing.Point(9, 164);
-            this.totalNodeBox.Name = "totalNodeBox";
-            this.totalNodeBox.ReadOnly = true;
-            this.totalNodeBox.Size = new System.Drawing.Size(192, 22);
-            this.totalNodeBox.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Nodes Infected";
             // 
             // nodeBox
             // 
@@ -384,17 +298,66 @@
             this.nodeBox.Size = new System.Drawing.Size(192, 417);
             this.nodeBox.TabIndex = 20;
             // 
-            // label4
+            // infNodeListLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 200);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Infected Nodes";
+            this.infNodeListLbl.AutoSize = true;
+            this.infNodeListLbl.Location = new System.Drawing.Point(6, 200);
+            this.infNodeListLbl.Name = "infNodeListLbl";
+            this.infNodeListLbl.Size = new System.Drawing.Size(129, 17);
+            this.infNodeListLbl.TabIndex = 19;
+            this.infNodeListLbl.Text = "Infected Nodes List";
             // 
-=======
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
+            // totalNodeBox
+            // 
+            this.totalNodeBox.Location = new System.Drawing.Point(9, 164);
+            this.totalNodeBox.Name = "totalNodeBox";
+            this.totalNodeBox.ReadOnly = true;
+            this.totalNodeBox.Size = new System.Drawing.Size(192, 22);
+            this.totalNodeBox.TabIndex = 18;
+            // 
+            // infNodeCountLbl
+            // 
+            this.infNodeCountLbl.AutoSize = true;
+            this.infNodeCountLbl.Location = new System.Drawing.Point(6, 143);
+            this.infNodeCountLbl.Name = "infNodeCountLbl";
+            this.infNodeCountLbl.Size = new System.Drawing.Size(144, 17);
+            this.infNodeCountLbl.TabIndex = 17;
+            this.infNodeCountLbl.Text = "Infected Nodes Count";
+            // 
+            // populationBox
+            // 
+            this.populationBox.Location = new System.Drawing.Point(9, 105);
+            this.populationBox.Name = "populationBox";
+            this.populationBox.ReadOnly = true;
+            this.populationBox.Size = new System.Drawing.Size(192, 22);
+            this.populationBox.TabIndex = 16;
+            // 
+            // infPopLbl
+            // 
+            this.infPopLbl.AutoSize = true;
+            this.infPopLbl.Location = new System.Drawing.Point(6, 84);
+            this.infPopLbl.Name = "infPopLbl";
+            this.infPopLbl.Size = new System.Drawing.Size(129, 17);
+            this.infPopLbl.TabIndex = 15;
+            this.infPopLbl.Text = "Infected Population";
+            // 
+            // totalPopulationBox
+            // 
+            this.totalPopulationBox.Location = new System.Drawing.Point(9, 47);
+            this.totalPopulationBox.Name = "totalPopulationBox";
+            this.totalPopulationBox.ReadOnly = true;
+            this.totalPopulationBox.Size = new System.Drawing.Size(192, 22);
+            this.totalPopulationBox.TabIndex = 14;
+            // 
+            // totalPopLbl
+            // 
+            this.totalPopLbl.AutoSize = true;
+            this.totalPopLbl.Location = new System.Drawing.Point(6, 26);
+            this.totalPopLbl.Name = "totalPopLbl";
+            this.totalPopLbl.Size = new System.Drawing.Size(111, 17);
+            this.totalPopLbl.TabIndex = 12;
+            this.totalPopLbl.Text = "Total Population";
+            // 
             // Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,14 +368,7 @@
             this.Controls.Add(this.inputTime);
             this.Controls.Add(this.graphOutput);
             this.Controls.Add(this.fileInput);
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> 8ad5d90d16c6386ac29b4bf9dc401c519724a4a2
-=======
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> d5b7e1eebc834ca65b5aa10c7e3dee134d6132fa
             this.Name = "Frontend";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P.T. Wabah";
@@ -450,13 +406,13 @@
         private System.Windows.Forms.CheckBox autoCalcCheck;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox nodeBox;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label infNodeListLbl;
         private System.Windows.Forms.TextBox totalNodeBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label infNodeCountLbl;
         private System.Windows.Forms.TextBox populationBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label infPopLbl;
         private System.Windows.Forms.TextBox totalPopulationBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label totalPopLbl;
     }
 }
 
