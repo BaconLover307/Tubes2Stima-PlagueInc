@@ -120,6 +120,12 @@ namespace PlagueInc
         {
             population[node] = num;
         }
+
+        public Dictionary<string, int> getPopulation()
+        {
+            return population;
+        }
+
         public void setInputTime(int time)
         {
             inputTime = time;

@@ -88,6 +88,21 @@ namespace PlagueInc
                 g.BFS(g.getViralSource());
                 Microsoft.Msagl.Drawing.Graph gDraw = GraphConverter.graphConverter(g);
                 gViewer.Graph = gDraw;
+
+                // Count total population and infected population
+                int totalPop = 0;
+                int totalInfected = 0;
+                foreach (var src in g.getPopulation())
+                {
+                    totalPop += src.Value;
+                    totalInfected += Convert.ToInt32(Math.Floor(g.I(src.Key, g.t(src.Key))));
+                }
+                totalPopulationBox.Text = totalPop.ToString();
+                populationBox.Text = totalInfected.ToString();
+
+                Dictionary<string, List<string>> edgesInfected = g.getEdgeInfected();
+                int totalEdgesInfected = edgesInfected.Count();
+                totalNodeBox.Text = totalEdgesInfected.ToString();
             }
             catch (System.InvalidOperationException err)
             {
@@ -100,3 +115,4 @@ namespace PlagueInc
         }
     }
 }
+`
