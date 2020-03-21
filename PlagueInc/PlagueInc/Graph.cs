@@ -83,7 +83,7 @@ namespace PlagueInc
                         time++;
                     }
 
-                    if (timeInfected[srcN] + time <= timeInfected[dstN])
+                    if (timeInfected[srcN] + time < timeInfected[dstN])
                     {
                         // update timeInfected
                         timeInfected[dstN] = timeInfected[srcN] + time;
